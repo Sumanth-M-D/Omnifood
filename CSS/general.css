@@ -1,0 +1,365 @@
+/* Design ingredients
+
+
+   -- 01. Typography system 
+
+            FONT SIZE SYSTEM (px)
+               10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+            font weights 
+               default:400;
+               medium :500;
+               semi-bold :600;
+               bold:700;
+
+            line-height 
+               default:1 ;
+               small:1.05;
+               paragraph-default:1.6;
+
+            letter-spacing 
+               -0.5px;
+               0.75px;
+               1.2px;
+
+
+
+   --02. Colors
+         --primary-color: #e67e22;
+
+         --primary-tints: 
+
+         --Primary-shades:
+
+         --accents:
+
+         --greys:
+            #555;
+            #333;
+            #767676;
+
+            #6f6f6f (lightest grey allowed on #f8d8bd)
+         --others
+            fae5d3
+
+
+   --03. Images -> unsplash.com
+
+
+   --04. People for testimonials -> UI faces
+   
+
+   --05. shadows 
+
+
+   --06. Border radius
+         default : 9px;
+         13px;
+
+   --07. Whitespace
+
+         SPACING SYSTEM (px)
+               2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+*/
+
+
+
+
+
+
+
+
+
+
+
+/* -----------------------------------
+Large containers 
+ --------------- ----------------------*/
+
+ :root {
+   --text-color-1:#555;
+   --text-color-light: #fff;
+   --main-color: #e67e22;
+   --main-color-tint1: #f8d8bd;
+   --main-color-tint2: #fae5d3;
+   --main-color-shade: #b8651b;
+   --main-color-shade2: #45260a;
+   --main-color-shade3: #8a4c14;
+
+}
+
+
+* {
+   padding:0;
+   margin: 0;
+   box-sizing: border-box;
+   
+}
+
+*:focus {
+   outline: none;
+   outline: 4px solid var(--main-color);
+   outline-offset: 2px;
+
+   /* box-shadow: 0 0 0 0.4rem #e67e22; */
+}
+
+html {
+   /* font-size: 10px;  -> bad practice '.' user cannot change the font size setting */
+   font-size: 62.5%;   /* (10/16)*100 = 62.5%  
+                           -> sets (1rem = 62.5% of users font size setting )
+                               (default= 16px)
+                              */
+   /* does not work for absolutly positioned elements (w/o relative parent) */
+   overflow-x: hidden;
+
+   /* scroll-behavior: smooth; */
+}
+
+body {
+   font-family: 'rubik', sans-serif;
+   line-height: 1;
+   font-weight: 400;
+   color: var(--text-color-1);
+   overflow-x: hidden;
+}
+
+.container {
+   max-width: 130rem;
+   margin: 0 auto;
+   padding:3.2rem;
+}
+
+strong {
+   font-weight: 500;
+}
+
+
+
+
+
+
+
+
+/* -------------------
+   Helper classes
+--------------------- */
+.margin-right-sm {
+   margin-right: 1.6rem !important;
+}
+
+
+
+
+
+
+
+/* -------------------
+   Headings
+--------------------- */
+.heading-primary,
+.heading-secondary,
+.heading-tertiary {
+   font-weight: 700;
+   color:#333;
+   letter-spacing: -0.05rem;
+} 
+
+
+.heading-primary{
+   font-size: 5.2rem;
+   line-height: 1.05;
+   margin-bottom: 3.2rem;
+}
+
+.heading-secondary {
+   font-size: 4.4rem;
+   /* margin-bottom: 9.6rem; */
+   margin-bottom: 4.4rem;
+   line-height:1.2;
+}
+
+.heading-tertiary {
+   font-size: 3.2rem;
+   margin-bottom: 1.8rem;
+   line-height: 1.2;
+}
+
+.subheading {
+   display: block;
+   font-size: 1.6rem;
+   font-weight: 500;
+   text-transform: uppercase;
+   margin-bottom: 1.6rem;
+   letter-spacing:0.75px;
+}
+
+
+
+
+
+
+
+
+/* -------------------
+   anchor tag buttons
+--------------------- */
+.btn, .btn:link, .btn:visited{
+   display: inline-block;
+   text-decoration: none;
+   
+   font-weight: 600;
+   font-size: 2rem;
+
+   padding:1.6rem 3.2rem;
+   /* margin:1rem; */
+   border-radius: 9px;
+
+   /* Only neccessary for .btn */
+   border:none;
+   cursor: pointer;
+   font-family: inherit;
+   transition: all 300ms;
+}
+
+.btn-full:link, .btn-full:visited {
+   background-color: var(--main-color);
+   color:var(--text-color-light);
+   
+}
+
+.btn-full:hover, .btn-full:active {
+   background-color: var(--main-color-shade);
+}
+
+
+.btn-outline:link, .btn-outline:visited {
+   background-color: var(--main-color-tint2);
+   color: var(--text-color-1);
+   border: 2px solid var(--main-color);
+}
+
+.btn-outline:hover, .btn-outline:active {
+   background-color: var(--main-color-tint1);
+
+   /* border: 2px solid var(--text-color-1); */
+
+   /* Trick to set border inside */
+   /* box-shadow: inset 0 0 0 3px #fff; */
+}
+
+
+.link:link, link:visited {
+   display: inline-block;
+   color:var(--main-color);
+   text-decoration: none;
+   border-bottom: 1px solid currentColor;
+   padding-bottom: 2px;
+   transition:all 0.3s;
+}
+
+
+.link:hover, link:active {
+   color: var(--main-color-shade);
+   border-bottom:1px solid transparent;
+   
+}
+
+
+
+
+
+
+
+/* ------------------
+bittons
+------------------ */
+.btn-form {
+   background-color:var(--main-color-shade2);
+   color: var(--main-color-tint2);
+   align-self: end;
+   padding:1.2rem;
+}
+
+.btn-form:hover {
+   background-color: #fff;
+   color: #555;
+}
+
+.cta-container *:focus {
+   outline: none;
+   outline: 4px solid var(--main-color-shade2);
+   outline-offset: 2px;
+
+   /* box-shadow: 0 0 0 0.4rem #e67e22; */
+}
+
+/* -------------------
+   Grid 
+--------------------- */
+
+
+.grid {
+   display: grid;
+   row-gap:9.6rem;
+   column-gap: 6.4rem;
+   /* margin-bottom: 9.6rem; */
+}
+
+/* .grid:last-child {
+   margin-bottom: 0;
+} */
+
+.grid--2-cols {
+   grid-template-columns: repeat(2, 1fr);
+}
+
+.grid--3-cols {
+   grid-template-columns: repeat(3, 1fr);
+}
+
+.grid--4-cols {
+   grid-template-columns: repeat(4, 1fr);
+}
+.grid--5-cols {
+   grid-template-columns: repeat(5, 1fr);
+}
+
+.grid-center-vertically {
+   align-items: center;
+}
+
+
+
+
+
+
+
+
+
+/* -------------------
+   List
+--------------------- */
+
+
+.list {
+   display: flex;
+   flex-direction: column;
+   gap:1.6rem;
+   padding:3rem;
+   list-style:none;
+}
+
+.list-item {
+   font-size: 1.8rem;
+   display: flex;
+   align-items: center;
+   gap:1.6rem;
+   line-height: 1.2;
+}
+
+.list-icon {
+   width:30px;
+   height:30px;
+   color:var(--main-color); 
+}

@@ -1,0 +1,402 @@
+
+/* 
+   rem and em do not depend on 'html' font-size in media queries !
+   Instead 1rem = 1em = 16px;
+*/
+
+
+/* -----------------
+   Breakpoints
+      84em = 1344px;
+      75em = 1200px;
+
+
+*/
+
+
+/*-------------------------------
+   Below 1344px (smaller laptops)
+ --------------------------------*/
+@media (max-width:84em) {
+   .hero {
+      max-width: 120rem;
+   }
+   
+   .heading-primary {
+      font-size: 4.4rem;
+   }
+
+   .gallary {
+      grid-template-columns: repeat(2, 1fr);
+  
+   }
+   
+}
+
+
+/*-------------------------------
+   Below 1200px (landscape tablets)
+ --------------------------------*/
+@media (max-width:75em) {
+   html {
+      /* font-size: 9px; */
+      font-size: 56.25%;
+   }
+
+   .heading-secondary {
+      font-size: 3.6rem;
+   }
+
+   .heading-tertiary {
+      font-size: 2.4rem;
+   }
+
+   .grid {
+      column-gap: 4.8rem;
+      row-gap: 6.4rem;
+   }
+
+   .header {
+      padding: 0 3.2rem;
+   }
+
+   .hero {
+      gap:4.8rem;
+   }
+
+   .main-nav-list {
+      gap:3.2rem;
+   }
+
+   .testimonials-outer-container{
+      gap:0; 
+   }
+
+   .testimonial-container {
+      padding:9.6rem 3.2rem;
+   }
+
+   .gallary {
+      gap:1.6rem;
+   }
+}
+
+
+
+
+
+
+/*-------------------------------
+   Below 944px (Tablets)
+ --------------------------------*/
+@media (max-width:59em) {
+   html {
+      font-size: 50%; /*8px*/
+   }
+
+   .hero {
+      grid-template-columns: 1fr;
+      padding: 0 8rem;
+      gap:6.4rem;
+   }
+
+   .delivered-meals {
+      display: flex;
+      gap:2rem;
+      justify-content: center;
+      margin-top: 3.2rem;
+   }
+
+   .hero-img {
+      width:60%;
+   }
+   
+   .hero-text-box,
+   .hero-img-box {
+      text-align: center;
+   }
+   
+
+   .logos img {
+      height:2.4rem;
+   }
+
+
+   .step-number {
+      font-size: 7.4rem;
+   }
+
+
+   .meals-content {
+      padding: 3.2rem;
+      padding-top: 2.4rem;
+   }
+
+   .diet .list {
+      padding-top: 0;
+      padding-bottom: 0;
+      gap:0.8rem;
+   }
+
+   .testimonials-outer-container{
+      grid-template-columns: 1fr;
+   }
+
+   .gallary {
+      grid-template-columns: repeat(6, 1fr);
+   }
+
+   .cta-container {
+      grid-template-columns: 3fr 2fr;
+   }
+
+   .cta-form {
+      row-gap: 3.2rem;
+      grid-template-columns: 1fr;
+   }
+
+   .btn-form {
+      margin-top: 1.2rem;
+   }
+
+
+
+
+
+   /* Mobile navigation bar */
+   .btn-mobile-nav {
+      display: block;
+   }
+
+   .icon-mobile-nav {
+
+   }
+
+   .header {
+      position: relative;
+   }
+   .main-nav {
+      background-color: rgba(255, 255, 255, 0.6);
+      -webkit-backdrop-filter:blur(15px); /* For safari browser */
+      backdrop-filter:blur(15px);
+      position:absolute;
+      top:0;
+      left:0;
+
+      width:100%;
+      height:100vh;
+      transform: translateX(100%);
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.5s ease-in;
+
+   /* TO hide the element using opacity */
+   
+      /* display: none;  dosn't allow transition */
+
+      /* TO hide the element visually */
+      opacity: 0;
+
+      /* To make the element inaccessible to mouse & keyboard */
+      pointer-events: none;
+
+      /* Hide it from screen readers */
+      visibility: hidden;
+   }
+
+
+   .nav-open .main-nav {
+      opacity:1;
+      pointer-events: auto;
+      visibility: visible;
+      transform: translate(0);
+   }
+
+   .nav-open .icon-mobile-nav[name="close-outline"] {
+      display: block;
+   }
+   
+   .nav-open .icon-mobile-nav[name="menu-outline"] {
+      display: none;
+   }
+
+   .main-nav-list { 
+      flex-direction: column;
+      gap:4.8rem;
+   }
+
+   .main-nav-link:link, .main-nav-link:visited {
+      font-size: 3rem;
+   }
+   
+   .pricing-card .list {
+      padding:0;
+   }
+
+}
+
+
+
+/* ----------------------- 
+   704px (smaller tablets)
+ --------------------------*/
+
+@media (max-width:44em) {
+   .section-meals .grid--3-cols, 
+   .features.grid--4-cols {
+      grid-template-columns: repeat(2, 1fr);
+   }
+
+   .diet {
+      grid-column: 1/-1;
+      justify-self: center;
+   }
+
+   .heading-secondary {
+      margin-bottom: 2.4rem;
+   }
+
+   .pricing-card {
+      width:100%;
+      padding: 2.4rem;
+   }
+
+   .pricing-card .list {
+      padding:0;
+   }
+
+   .grid-footer {
+      grid-template-columns: repeat(6, 1fr);
+      
+   }
+
+   .nav-col {
+      /* grid-row: 1; */
+      grid-column: span 2;
+      margin-bottom: 3.2rem;
+   }
+
+   .logo-col, .contact-col  {
+      order:1;
+      grid-column: span 3;
+   }
+   
+}
+
+
+
+
+
+
+
+
+/* ----------------------- 
+   560px (Mobile phones)
+ --------------------------*/
+@media (max-width:35em) {
+   .grid {
+      row-gap: 4.8rem;
+   }
+
+   .grid--2-cols,
+   .section-pricing .grid--2-cols,
+   .section-meals .grid--3-cols, 
+   .features.grid--4-cols {
+      grid-template-columns: 1fr;
+   }
+
+
+   .hero {
+      padding: 0 3.2rem;
+   }
+
+   .section-hero {
+      padding:2.4rem 0 6.4rem 0;
+   }
+
+
+   .btn, .btn:link, .btn:visited{ 
+      padding: 2.4rem 1.6rem;
+   }
+
+   .hero-img {
+      width:80%;
+   }
+
+   .logos img {
+      height: 1.2rem;
+   }
+
+
+
+   .step-img-box:nth-child(2) {
+      grid-row: 1;
+   }
+   .step-img-box:nth-child(6) {
+      grid-row: 5;
+   }
+
+   .step-text-box {
+      /* margin-bottom: 4.4rem; */
+   }
+
+   .step-text-box:nth-child(6) {
+      margin-bottom: 0;
+   }
+
+   .step-img-box {
+      transform: translateY(5.2rem);
+   }
+
+
+   /* 
+   .section-hero {
+      padding: 4.8rem 0 4.8rem 0;
+   }
+
+   .section-how {
+      padding: 4.8rem 0 4.8rem;
+   } */
+
+
+   .gallary {
+      gap:1rem;
+      grid-template-columns: repeat(4, 1fr);
+   }
+
+   .testimonial-container {
+      padding-bottom: 4.8rem;
+   }
+
+   .cta-container {
+      grid-template-columns: 1fr;
+   }
+
+   .cta-textbox {
+      padding: 3.2rem;
+   }
+
+   .cta-imgbox {
+      height:36rem;
+      grid-row: 1;
+   }
+
+   .cta-form {
+      column-gap: 2.4rem;
+      
+   }
+}
+
+
+
+
+/* 
+   FONT SIZE SYSTEM (px)
+   10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+    SPACING SYSTEM (px)
+    2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+*/
+
